@@ -10,16 +10,16 @@ package tubes_pbo_13;
  * @author Anang Kur
  */
 public class Pasien extends Orang{
-	private String idPasien;
+	private long idPasien;
 	
-	public Pasien(String idPasien, String nama, String alamat, long noHP, String jeniskelamin){
+	public Pasien(long idPasien, String nama, String alamat, long noHP, String jeniskelamin){
 		super (nama, alamat, noHP, jeniskelamin);
 		this.idPasien = idPasien;
 	}
-	public void setIdPasien(String idPasien){
+	public void setIdPasien(long idPasien){
 		this.idPasien = idPasien;
 	}
-	public String getIdPasien(){
+	public long getIdPasien(){
 		return idPasien;
 	}
 }
