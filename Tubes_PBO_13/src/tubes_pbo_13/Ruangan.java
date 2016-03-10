@@ -15,29 +15,56 @@ public class Ruangan{
 	private int jumlahPasienInap;
 	private int noRuangan;
 	private String namaRuangan;
-	private int indexRuangan;
+	private int indexPasien = 0;
 	
 	//definisi method
-	public Ruangan(int jumlahPasienInap, int noRuangan, String NamaRuangan){
-		PasienInap[] daftarPasien=new PasienInap[jumlahPasienInap];
-		this.noRuangan=noRuangan;
-		this.namaRuangan=namaRuangan;
+	public Ruangan(int jumlahPasienInap, int noRuangan, String namaRuangan){
+		daftarPasien = new PasienInap[jumlahPasienInap];
+		this.noRuangan = noRuangan;
+		this.namaRuangan = namaRuangan;
+                this.jumlahPasienInap = jumlahPasienInap;
 	}
+        
+        public void setNamaRuangan(String namaRuangan){
+            this.namaRuangan = namaRuangan;
+        }
+        
+        public String getNamaRuangan(){
+            return namaRuangan;
+        }
+        
+        public void setNomorRuangan(int noRuangan){
+            this.noRuangan = noRuangan;
+        }
+        
+        public int getNomorRuangan(){
+            return noRuangan;
+        }
+        
+        public int getJumlahPasienInap(){
+            return jumlahPasienInap;
+        }
+        
+        public int getIndexPasien(){
+            return indexPasien;
+        }
+
 	public void tambahPasienInap(Pasien p, Dokter d){
-		daftarPasien[indexRuangan]=new PasienInap(p,d);
-		indexRuangan++;
+		daftarPasien[indexPasien] = new PasienInap(p,d);
+		indexPasien++;
 	}
 	public PasienInap getPasienInap(int n){
 		return daftarPasien[n];
 	}
-	public PasienInap getPasienInap(String cariIdPasien){
+	public PasienInap getPasienInap(long cariIdPasien){
 		int i=0;
-		while(i<=jumlahPasienInap && daftarPasien[i].getPasien().getIdPasien()!=cariIdPasien){
+		while(i < jumlahPasienInap && daftarPasien[i].getPasien().getIdPasien()!= cariIdPasien){
 			i++;
 		}
 		return daftarPasien[i];
 	}
-	public void RemovePasienInap(int n){
-		daftarPasien[n]=null;
+	public void removePasienInap(int n){
+		daftarPasien[n] = null;
+                indexPasien--;
 	}
 }

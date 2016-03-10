@@ -50,6 +50,10 @@ public class PasienInap{
 	
 	public void DeleteDiagnosa(int n){
 		diagnosa[n]=null;
+                indexDiagnosa--;
 	}
 	
+        public int getIndexDiagnosa(){
+            return indexDiagnosa;
+        }
 }
