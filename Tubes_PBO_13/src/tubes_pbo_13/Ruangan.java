@@ -5,24 +5,28 @@
  */
 package tubes_pbo_13;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Anang Kur
  */
 public class Ruangan{
 	//definisi atribut
-	private PasienInap[] daftarPasien;
+	//private PasienInap[] daftarPasien;
+        private ArrayList<PasienInap> daftarPasienInap = new ArrayList<>();
 	private int jumlahPasienInap;
 	private int noRuangan;
 	private String namaRuangan;
-	private int indexPasien = 0;
+	//private int indexPasien = 0;
 	
 	//definisi method
 	public Ruangan(int jumlahPasienInap, int noRuangan, String namaRuangan){
-		daftarPasien = new PasienInap[jumlahPasienInap];
+		//daftarPasien = new PasienInap[jumlahPasienInap];
 		this.noRuangan = noRuangan;
 		this.namaRuangan = namaRuangan;
                 this.jumlahPasienInap = jumlahPasienInap;
+            
 	}
         
         public void setNamaRuangan(String namaRuangan){
@@ -45,26 +49,42 @@ public class Ruangan{
             return jumlahPasienInap;
         }
         
-        public int getIndexPasien(){
+        /*public int getIndexPasien(){
             return indexPasien;
-        }
+        }*/
 
 	public void tambahPasienInap(Pasien p, Dokter d){
-		daftarPasien[indexPasien] = new PasienInap(p,d);
-		indexPasien++;
+		/*daftarPasien[indexPasien] = new PasienInap(p,d);
+		indexPasien++;*/
+            PasienInap pasienInap = new PasienInap(p,d);
+            daftarPasienInap.add(pasienInap);
 	}
 	public PasienInap getPasienInap(int n){
-		return daftarPasien[n];
+		//return daftarPasien[n];
+            return daftarPasienInap.get(n);
 	}
-	public PasienInap getPasienInap(long cariIdPasien){
-		int i=0;
+	public PasienInap getPasienInap(String cariIdPasien){
+		/*int i=0;
 		while(i < jumlahPasienInap && daftarPasien[i].getPasien().getIdPasien()!= cariIdPasien){
 			i++;
 		}
-		return daftarPasien[i];
+		return daftarPasien[i];*/
+            int i = 0;
+            while (i <= daftarPasienInap.size()){
+                if (daftarPasienInap.get(i).getPasien().getIdPasien().equals(cariIdPasien)){
+                    return daftarPasienInap.get(i);
+                }
+                i++;
+            }
+            return null;
 	}
+        
 	public void removePasienInap(int n){
-		daftarPasien[n] = null;
-                indexPasien--;
+		/*daftarPasien[n] = null;
+                indexPasien--;*/
+            daftarPasienInap.remove(n);
 	}
+        public ArrayList getDaftarpasien(){
+            return daftarPasienInap;
+        }
 }

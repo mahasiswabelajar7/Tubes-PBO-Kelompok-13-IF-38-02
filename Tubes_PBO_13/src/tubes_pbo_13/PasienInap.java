@@ -5,16 +5,19 @@
  */
 package tubes_pbo_13;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Anang Kur
  */
 public class PasienInap{
 	//definisi atribut
-	private int indexDiagnosa=0;
+	//private int indexDiagnosa=0;
 	private Pasien pasien;
 	private	Dokter dokter;
-	private	String[] diagnosa = new String[10];
+	//private String[] diagnosa = new String[10];
+        private ArrayList<String> diagnosa = new ArrayList<>();
 	
 	//definisi method
 	
@@ -40,20 +43,23 @@ public class PasienInap{
 	}
 	
 	public void addDiagnosa(String penyakit){
-		diagnosa[indexDiagnosa]=penyakit;
-		indexDiagnosa++;
+		diagnosa.add(penyakit);
 	}
 	
 	public String getDiagnosa(int n){
-		return diagnosa[n];
+		return diagnosa.get(n);
 	}
 	
 	public void DeleteDiagnosa(int n){
-		diagnosa[n]=null;
-                indexDiagnosa--;
+		diagnosa.remove(n);
 	}
+        public ArrayList getJumlahDiagnosa(){
+            return diagnosa;
+        }
 	
+        /*
         public int getIndexDiagnosa(){
             return indexDiagnosa;
         }
+        */
 }
