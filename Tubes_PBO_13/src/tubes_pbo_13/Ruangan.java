@@ -1,32 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tubes_pbo_13;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Anang Kur
- */
 public class Ruangan{
 	//definisi atribut
-	//private PasienInap[] daftarPasien;
         private ArrayList<PasienInap> daftarPasienInap = new ArrayList<>();
 	private int jumlahPasienInap;
-	private int noRuangan;
+	private String noRuangan;
+        private static int no;
 	private String namaRuangan;
-	//private int indexPasien = 0;
 	
 	//definisi method
-	public Ruangan(int jumlahPasienInap, int noRuangan, String namaRuangan){
-		//daftarPasien = new PasienInap[jumlahPasienInap];
-		this.noRuangan = noRuangan;
+	public Ruangan(int jumlahPasienInap, String namaRuangan){
+		noRuangan = "R-" +(++no);
 		this.namaRuangan = namaRuangan;
                 this.jumlahPasienInap = jumlahPasienInap;
-            
 	}
         
         public void setNamaRuangan(String namaRuangan){
@@ -36,12 +24,8 @@ public class Ruangan{
         public String getNamaRuangan(){
             return namaRuangan;
         }
-        
-        public void setNomorRuangan(int noRuangan){
-            this.noRuangan = noRuangan;
-        }
-        
-        public int getNomorRuangan(){
+                
+        public String getNomorRuangan(){
             return noRuangan;
         }
         
@@ -49,28 +33,18 @@ public class Ruangan{
             return jumlahPasienInap;
         }
         
-        /*public int getIndexPasien(){
-            return indexPasien;
-        }*/
-
 	public void tambahPasienInap(Pasien p, Dokter d){
-		/*daftarPasien[indexPasien] = new PasienInap(p,d);
-		indexPasien++;*/
             PasienInap pasienInap = new PasienInap(p,d);
             daftarPasienInap.add(pasienInap);
 	}
+        
 	public PasienInap getPasienInap(int n){
-		//return daftarPasien[n];
             return daftarPasienInap.get(n);
 	}
+        
 	public PasienInap getPasienInap(String cariIdPasien){
-		/*int i=0;
-		while(i < jumlahPasienInap && daftarPasien[i].getPasien().getIdPasien()!= cariIdPasien){
-			i++;
-		}
-		return daftarPasien[i];*/
             int i = 0;
-            while (i <= daftarPasienInap.size()){
+            while (i < daftarPasienInap.size()){
                 if (daftarPasienInap.get(i).getPasien().getIdPasien().equals(cariIdPasien)){
                     return daftarPasienInap.get(i);
                 }
@@ -80,11 +54,15 @@ public class Ruangan{
 	}
         
 	public void removePasienInap(int n){
-		/*daftarPasien[n] = null;
-                indexPasien--;*/
             daftarPasienInap.remove(n);
 	}
+        
         public ArrayList getDaftarpasien(){
             return daftarPasienInap;
+        }
+        
+        public void updateRuangan(int jumlahPasienInap, String namaRuangan){
+            this.jumlahPasienInap = jumlahPasienInap;
+            this.namaRuangan = namaRuangan;
         }
 }
