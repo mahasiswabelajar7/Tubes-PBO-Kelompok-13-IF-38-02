@@ -1,29 +1,16 @@
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tubes_pbo_13;
 import java.util.Scanner;
 
-/**
- *
- * @author Anang Kur
- */
 public class Test1 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        Dokter dokter1 = new Dokter("dokter 1","Lampung",1234567890,"Pria","Kulit","001");
-        Dokter dokter2 = new Dokter("dokter 2","Lampung",1111111111,"Wanita","Penyakit Dalam","002");
+        Dokter dokter1 = new Dokter("dokter 1","Lampung",1234567890,"Pria","Kulit");
+        Dokter dokter2 = new Dokter("dokter 2","Lampung",1111111111,"Wanita","Penyakit Dalam");
         
-        Pasien pasien1 = new Pasien("001", "pasien 1", "Bandung", 12345, "Pria");
-        Pasien pasien2 = new Pasien("002", "pasien 2", "Makassar", 54321, "Pria");
+        Pasien pasien1 = new Pasien("pasien 1", "Bandung", 12345, "Pria","Gatal");
+        Pasien pasien2 = new Pasien("pasien 2", "Makassar", 54321, "Pria","Batuk");
         
-        Ruangan ruangan1 = new Ruangan(2,1,"ruangan 1");
+        Ruangan ruangan1 = new Ruangan(2,"ruangan 1");
         
         ruangan1.tambahPasienInap(pasien1, dokter1);
         ruangan1.tambahPasienInap(pasien2, dokter1);
@@ -84,7 +71,7 @@ public class Test1 {
         }
         
         Scanner input1 = new Scanner(System.in);
-        System.out.print("Masukkan Index: ");
+        System.out.print("Masukkan Id Pasien: ");
         String cari = input1.nextLine();
         PasienInap ketemu = ruangan1.getPasienInap(cari);
     
