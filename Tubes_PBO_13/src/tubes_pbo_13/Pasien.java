@@ -1,8 +1,9 @@
 package tubes_pbo_13;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Pasien extends Orang{
+public class Pasien extends Orang implements Serializable{
     private String idPasien;
     private static int intIdPasien;
     private ArrayList<String> riwayatPenyakit = new ArrayList<>();

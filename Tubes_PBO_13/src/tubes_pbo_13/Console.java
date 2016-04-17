@@ -115,26 +115,6 @@ public class Console {
         System.out.println("5. Kembali");
     }
 
-    /*public void menu_1_1(){
-     System.out.println("Input Data Dokter");
-     System.out.print("nama: ");
-     inNama = inputString.nextLine();
-     System.out.print("Spesialis: ");
-     inSpesialis = inputString.nextLine();
-     System.out.print("Alamat: ");
-     inAlamat = inputString.nextLine();
-     System.out.print("No Hp: ");
-     try{
-     inNoHp = inputLong.nextLong();
-     }
-     catch(Exception e){
-            
-     inputLong.next();
-     }
-     System.out.print("Jenis Kelamin: ");
-     inJenisKelamin = inputString.nextLine();
-     addDokter(inNama, inAlamat, inNoHp, inJenisKelamin, inSpesialis);
-     }*/
     public void menu_1_2() {
         if (daftarDokter.isEmpty()) {
             System.out.println("Dokter belum diinputkan");
@@ -147,69 +127,11 @@ public class Console {
                 System.out.println("Id: " + daftarDokter.get(i).getIdDokter());
                 System.out.println("Nama: " + daftarDokter.get(i).getNama());
                 System.out.println("");
-                /*System.out.println("Alamat: " + daftarDokter.get(i).getAlamat());
-                System.out.println("Jenis Kelamin: " + daftarDokter.get(i).getJenisKelamin());
-                System.out.println("No Hp: " + daftarDokter.get(i).getNoHP());
-                System.out.println("");*/
                 i++;
             }
         }
     }
 
-    /*public void menu_1_3(){
-     System.out.println("Edit Data Dokter");
-     System.out.print("Masukkan Id Dokter yang ingin diedit: ");
-     String idCari = inputString.nextLine();
-     i = 0;
-     while (i <= daftarDokter.size() && daftarDokter.get(i).getIdDokter().equals(idCari) == false){
-     i++;
-     }
-     if (daftarDokter.get(i).getIdDokter().equals(idCari)){
-     System.out.print("nama: ");
-     inNama = inputString.nextLine();
-     System.out.print("Spesialis: ");
-     inSpesialis = inputString.nextLine();
-     System.out.print("Alamat: ");
-     inAlamat = inputString.nextLine();
-     System.out.print("No Hp: ");
-     inNoHp = inputLong.nextLong();
-     System.out.print("Jenis Kelamin: ");
-     inJenisKelamin = inputString.nextLine();
-     Dokter tempDokter = daftarDokter.get(i);
-     tempDokter.updateDokter(inNama, inAlamat, inNoHp, inJenisKelamin, inSpesialis);
-     daftarDokter.set(i, tempDokter);
-     }
-     }*/
-    /*public void menu_1_4() {
-        if (daftarDokter.isEmpty()) {
-            System.out.println("Maaf data dokter belum diinputkan");
-        } else {
-            System.out.println("Delete Data Dokter");
-            System.out.print("Masukkan Id Dokter yg ingin didelete: ");
-            String idCari = inputString.nextLine();
-            i = 0;
-            while (i < daftarDokter.size()) {
-                if (daftarDokter.get(i).getIdDokter().equals(idCari)) {
-                    daftarDokter.remove(i);
-                }
-                i++;
-            }
-            
-        }
-    }*/
-
-    /*public void menu_2_1(){
-     System.out.println("Input Data Pasien");
-     System.out.print("nama: ");
-     inNama = inputString.nextLine();
-     System.out.print("Alamat: ");
-     inAlamat = inputString.nextLine();
-     System.out.print("No Hp: ");
-     inNoHp = inputLong.nextLong();
-     System.out.print("Jenis Kelamin: ");
-     inJenisKelamin = inputString.nextLine();
-     addPasien(inNama, inAlamat, inNoHp, inJenisKelamin);
-     }*/
     public void menu_2_2() {
         if (daftarPasien.isEmpty()) {
             System.out.println("Maaf pasien belum diinputkan");
@@ -220,58 +142,12 @@ public class Console {
                 System.out.println((i+1)+". ");
                 System.out.println("Id: " + daftarPasien.get(i).getIdPasien());
                 System.out.println("Nama: " + daftarPasien.get(i).getNama());
-                /*System.out.println("Alamat: " + daftarPasien.get(i).getAlamat());
-                System.out.println("Jenis Kelamin: " + daftarPasien.get(i).getJenisKelamin());
-                System.out.println("No Hp: " + daftarPasien.get(i).getNoHP());*/
                 System.out.println("");
                 i++;
             }
         }
     }
 
-    /*public void menu_2_3(){
-     System.out.println("Edit Data Pasien");
-     System.out.print("Masukkan Id pasien yang ingin diedit: ");
-     String idCari = inputString.nextLine();
-     i = 0;
-     while (i <= daftarPasien.size() && daftarPasien.get(i).getIdPasien().equals(idCari) == false){
-     i++;
-     }
-     if (daftarPasien.get(i).getIdPasien().equals(idCari)){
-     System.out.print("nama: ");
-     inNama = inputString.nextLine();
-     System.out.print("Alamat: ");
-     inAlamat = inputString.nextLine();
-     System.out.print("No Hp: ");
-     inNoHp = inputLong.nextLong();
-     System.out.print("Jenis Kelamin: ");
-     inJenisKelamin = inputString.nextLine();
-     Pasien tempPasien = daftarPasien.get(i);
-     tempPasien.updatePasien(inNama, inAlamat, inNoHp, inJenisKelamin);
-     daftarPasien.set(i, tempPasien);
-     }
-     }*/
-    /*public void menu_2_4() {
-        System.out.println("Delete Data Pasien");
-        System.out.print("Masukkan data pasien yg ingin diedit: ");
-        String idCari = inputString.nextLine();
-        i = 0;
-        while (i < daftarPasien.size()) {
-            if (daftarPasien.get(i).getIdPasien().equals(idCari)) {
-                daftarPasien.remove(i);
-            }
-            i++;
-        }
-    }*/
-
-    /*public void menu_3_1(){
-     System.out.println("Input Data Ruangan");
-     System.out.print("nama: ");
-     inNama = inputString.nextLine();
-     System.out.println("Jumlah Pasien Inap: ");
-     inJmlPasienInap = inputInteger.nextInt();
-     addRuangan(inJmlPasienInap, inNama);
-     }*/
     public void menu_3_2() {
         if (daftarRuangan.isEmpty()) {
             System.out.println("Maaf ruangan belum diinputkan");
@@ -282,43 +158,12 @@ public class Console {
                 System.out.println((i+1)+". ");
                 System.out.println("No Ruangan: " + daftarRuangan.get(i).getNomorRuangan());
                 System.out.println("Nama: " + daftarRuangan.get(i).getNamaRuangan());
-                //System.out.println("Kapasitas: " + daftarRuangan.get(i).getJumlahPasienInap() + " Orang");
+                System.out.println("Kapasitas Ruangan: " + daftarRuangan.get(i).getJumlahPasienInap());
                 System.out.println("");
                 i++;
             }
         }
     }
-
-    /*public void menu_3_3(){
-     System.out.println("Edit Data Ruangan");
-     System.out.print("Masukkan no ruangan yang ingin diedit: ");
-     String idCari = inputString.nextLine();
-     i = 0;
-     while (i <= daftarRuangan.size() && daftarRuangan.get(i).getNomorRuangan().equals(idCari) == false){
-     i++;
-     }
-     if (daftarRuangan.get(i).getNomorRuangan().equals(idCari)){
-     System.out.print("nama: ");
-     String inNama = inputString.nextLine();
-     System.out.print("Jumlah Pasien Inap: ");
-     inJmlPasienInap = inputInteger.nextInt();
-     Ruangan tempRuangan = daftarRuangan.get(i);
-     tempRuangan.updateRuangan(inJmlPasienInap, inNama);
-     daftarRuangan.set(i, tempRuangan);
-     }
-     }*/
-    /*public void menu_3_4() {
-        System.out.println("Delete Data Ruangan");
-        System.out.print("Masukkan no Ruangan yg ingin diedit: ");
-        String idCari = inputString.nextLine();
-        i = 0;
-        while (i < daftarRuangan.size()) {
-            if (daftarRuangan.get(i).getNomorRuangan().equals(idCari)) {
-                daftarRuangan.remove(i);
-            }
-            i++;
-        }
-    }*/
 
     public void mainMenu(String args[]) {
         String back1 = "y";
@@ -818,7 +663,7 @@ public class Console {
                                         System.out.print("Masukkan No Ruangan: ");
                                         inNoRuangan = inputString.nextLine();
                                         i = 0;
-                                        while (i < daftarRuangan.size() && daftarRuangan.get(i).getNomorRuangan().equals(inNoRuangan) == false) {
+                                        while (i < daftarRuangan.size() - 1 && daftarRuangan.get(i).getNomorRuangan().equals(inNoRuangan) == false) {
                                             i++;
                                         }
                                         if (daftarRuangan.get(i).getNomorRuangan().equals(inNoRuangan)) {
@@ -829,7 +674,7 @@ public class Console {
                                                 System.out.println("Maaf Data Pasien Belum diinputkan");
                                             } else {
                                                 int j = 0;
-                                                while (j < daftarPasien.size() && daftarPasien.get(i).getIdPasien().equals(inIdPasien) == false) {
+                                                while (j < daftarPasien.size() - 1 && daftarPasien.get(i).getIdPasien().equals(inIdPasien) == false) {
                                                     j++;
                                                 }
                                                 if (daftarPasien.get(j).getIdPasien().equals(inIdPasien)) {
@@ -840,7 +685,7 @@ public class Console {
                                                         System.out.println("Maaf Data Dokter Belum diinputkan");
                                                     } else {
                                                         int k = 0;
-                                                        while (k < daftarDokter.size() && daftarDokter.get(k).getIdDokter().equals(inIdDokter) == false) {
+                                                        while (k < daftarDokter.size() - 1 && daftarDokter.get(k).getIdDokter().equals(inIdDokter) == false) {
                                                             k++;
                                                         }
                                                         if (daftarDokter.get(i).getIdDokter().equals(inIdDokter)) {
@@ -932,6 +777,7 @@ public class Console {
                                             System.out.println("Nama: "+daftarRuangan.get(i).getNamaRuangan());
                                             System.out.println("Kapasitas: "+daftarRuangan.get(i).getJumlahPasienInap());
                                             System.out.println("Tersisa: "+(daftarRuangan.get(i).getJumlahPasienInap() - daftarRuangan.get(i).getDaftarpasien().size()));
+                                            i++;
                                         }
                                     }
                                     }

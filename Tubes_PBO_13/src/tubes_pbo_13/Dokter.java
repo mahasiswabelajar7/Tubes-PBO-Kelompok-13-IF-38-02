@@ -1,6 +1,8 @@
 package tubes_pbo_13;
 
-public class Dokter extends Orang{
+import java.io.Serializable;
+
+public class Dokter extends Orang implements Serializable{
 	private String spesialis;
 	private String idDokter;
         private static int intIdDokter;

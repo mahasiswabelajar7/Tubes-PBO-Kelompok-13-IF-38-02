@@ -1,6 +1,8 @@
 package tubes_pbo_13;
 
-public abstract class Orang{
+import java.io.Serializable;
+
+public abstract class Orang implements Serializable{
 	private String nama;
 	private String alamat;
 	private long noHP;

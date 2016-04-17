@@ -16,6 +16,11 @@ public class Ruangan{
 		this.namaRuangan = namaRuangan;
                 this.jumlahPasienInap = jumlahPasienInap;
 	}
+
+    public void setJumlahPasienInap(int jumlahPasienInap) {
+        this.jumlahPasienInap = jumlahPasienInap;
+    }
+        
         
         public void setNamaRuangan(String namaRuangan){
             this.namaRuangan = namaRuangan;
